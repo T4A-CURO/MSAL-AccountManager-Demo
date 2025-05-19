@@ -8,7 +8,16 @@ A hosted version of this demo app can be played with here: https://delightful-fo
 
 ## NOTE to Developers
 
-This code should be used as a "hello world" demonstration and will require additional work to make production ready.  For example, but not limited to, hiding the config data from the front end.
+This demonstration focuses specifically on showcasing MSAL authentication with Dataverse and retrieving data based on user permissions. It is not intended to be a complete production-ready application, but rather a reference implementation for this particular aspect of application development.
+
+When incorporating these concepts into your production applications, you should address additional considerations such as:
+- Securing configuration data by moving it to a protected backend service
+- Implementing comprehensive security practices and data validation
+- Adding proper error handling, logging, and monitoring
+- Optimizing performance and implementing caching strategies
+- Ensuring compliance with organizational security policies
+
+This demo serves as a starting point to understand the authentication flow and data retrieval patterns that you can then integrate into your broader, properly architected enterprise application.
 
 ## Features
 
@@ -17,6 +26,35 @@ This code should be used as a "hello world" demonstration and will require addit
 - Detailed account view
 - Direct CRM integration
 - Responsive design
+
+## Dynamics & Power platform rate limits and entitlements
+
+Dynamics CRM and Power Platform web API is subject to various fair useage limits.  It is recommended that when developing against the dataverse you understand these limits and how to code to handle them.  
+
+See CURO integration Framework documentation for more detail on these limits.
+
+Below are some suggestions on how to handle them: 
+
+Robust Rate Limit Handling:
+- Automatically detects 429 (Too Many Requests) responses
+- Respects the Retry-After header when provided
+- Implements exponential backoff for retries
+- Limits maximum retry attempts to prevent infinite loops
+Improved Error Handling:
+- Better error messages for different types of failures
+- Structured error handling with context
+- Automatic session refresh on authentication failures
+- User-friendly error messages
+Centralized API Logic:
+- All API calls go through a single handler
+- Consistent error handling and retry logic
+- Easier to maintain and modify API behavior
+- Better separation of concerns
+Better User Experience:
+- Clear feedback when rate limits are hit
+- Automatic retries without user intervention
+- Transparent error messages
+- Graceful handling of authentication issues
 
 ## Setup
 
@@ -110,29 +148,6 @@ const config = {
 
 3. node server
 
-#Dynamics & Power platform rate limits and entitlements
-
-This code will will provide several benefits:
-Robust Rate Limit Handling:
-- Automatically detects 429 (Too Many Requests) responses
-- Respects the Retry-After header when provided
-- Implements exponential backoff for retries
-- Limits maximum retry attempts to prevent infinite loops
-Improved Error Handling:
-- Better error messages for different types of failures
-- Structured error handling with context
-- Automatic session refresh on authentication failures
-- User-friendly error messages
-Centralized API Logic:
-- All API calls go through a single handler
-- Consistent error handling and retry logic
-- Easier to maintain and modify API behavior
-- Better separation of concerns
-Better User Experience:
-- Clear feedback when rate limits are hit
-- Automatic retries without user intervention
-- Transparent error messages
-- Graceful handling of authentication issues
 
 ## License
 
