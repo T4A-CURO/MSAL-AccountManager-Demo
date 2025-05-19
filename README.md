@@ -40,16 +40,19 @@ Robust Rate Limit Handling:
 - Respects the Retry-After header when provided
 - Implements exponential backoff for retries
 - Limits maximum retry attempts to prevent infinite loops
+
 Improved Error Handling:
 - Better error messages for different types of failures
 - Structured error handling with context
 - Automatic session refresh on authentication failures
 - User-friendly error messages
+
 Centralized API Logic:
 - All API calls go through a single handler
 - Consistent error handling and retry logic
 - Easier to maintain and modify API behavior
 - Better separation of concerns
+
 Better User Experience:
 - Clear feedback when rate limits are hit
 - Automatic retries without user intervention
