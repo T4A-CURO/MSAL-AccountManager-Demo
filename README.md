@@ -1,6 +1,14 @@
 # CURO Account Manager
 
-A web application for managing CURO accounts with Microsoft Dataverse integration.
+A demo web application for managing CURO accounts with Microsoft Dataverse integration.
+
+This SPA will give you a working example of how to use MSAL to authenticate dataverse connections and work with data in the context of user privileges.
+
+A hosted version of this demo app can be played with here: https://delightful-forest-069a18503.6.azurestaticapps.net/ 
+
+## NOTE to Developers
+
+This code should be used as a "hello world" demonstration and will require additional work to make production ready.  For example, but not limited to, hiding the config data from the front end.
 
 ## Features
 

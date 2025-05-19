@@ -1,6 +1,6 @@
 const config = {
     auth: {
-        clientId: "52a70017-0822-4933-9ebb-be161f15ea47", // Microsoft's sample client ID
+        clientId: "52a70017-0822-4933-9ebb-be161f15ea47", // T4A's sample client ID - You need to create your own one of these and if using in production you will also require to be registered as an approved publisher.
         authority: "https://login.microsoftonline.com/common",
         
         redirectUri: "https://delightful-forest-069a18503.6.azurestaticapps.net/index.html",
